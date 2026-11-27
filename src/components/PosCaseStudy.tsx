@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { FiArrowLeft, FiMail, FiRefreshCw, FiServer, FiShield, FiSmartphone } from 'react-icons/fi'
+import { FiArrowLeft, FiArrowRight, FiMail, FiRefreshCw, FiServer, FiShield, FiSmartphone } from 'react-icons/fi'
 import { PROFILE } from '../data/content'
 import { POS, POS_FEATURES, POS_PROBLEMS, POS_QUALITY, POS_STACK, posShot } from '../data/pos'
 import PosScreen from './PosScreen'
@@ -321,9 +321,14 @@ export default function PosCaseStudy() {
             </a>
           </div>
         </Reveal>
-        <a href="#work" className="mt-10 inline-flex items-center gap-1.5 text-sm text-muted hover:text-fg">
-          <FiArrowLeft size={14} /> Back to work
-        </a>
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 text-sm">
+          <a href="#work" className="inline-flex items-center gap-1.5 text-muted hover:text-fg">
+            <FiArrowLeft size={14} /> Back to work
+          </a>
+          <a href="#/campusshare" className="inline-flex items-center gap-1.5 text-muted hover:text-fg">
+            Next: CampusShare <FiArrowRight size={14} />
+          </a>
+        </div>
       </section>
     </article>
   )

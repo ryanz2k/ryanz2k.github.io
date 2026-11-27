@@ -1,5 +1,6 @@
 import { FiArrowUpRight, FiLock } from 'react-icons/fi'
 import { CLIENT_SITES, MORE_PROJECTS, PROJECTS, type Project } from '../data/content'
+import { campusShot } from '../data/campusshare'
 import { Chips, ExternalLink, Reveal, Section, onSpot } from './ui'
 
 function ProjectCard({ project }: { project: Project }) {
@@ -64,6 +65,11 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Projects() {
+  // CampusShare is featured above once it has real screenshots; its slot in
+  // the grid then goes to the smaller projects.
+  const featured = !!campusShot('app-home')
+  const projects = PROJECTS.filter((p) => !(featured && p.title === 'CampusShare'))
+
   return (
     <Section
       id="projects"
@@ -72,15 +78,35 @@ export default function Projects() {
       intro="Mobile, web, games and client systems, from student marketplaces to point of sale for a salon group."
     >
       <ul className="grid gap-6 md:grid-cols-2">
-        {PROJECTS.map((p, i) => (
+        {projects.map((p, i) => (
           <li key={p.title}>
             <Reveal delay={(i % 2) * 0.06} className="h-full">
               <ProjectCard project={p} />
             </Reveal>
           </li>
         ))}
+        {featured && (
+          <li>
+            <Reveal delay={(projects.length % 2) * 0.06} className="h-full">
+              <div className="flex h-full flex-col justify-center rounded-2xl border border-dashed border-line p-8">
+                <p className="eyebrow">Also built</p>
+                <ul className="mt-5 space-y-5">
+                  {MORE_PROJECTS.map((m) => (
+                    <li key={m.title}>
+                      <ExternalLink href={m.href} className="link text-lg font-semibold tracking-tight">
+                        {m.title}
+                      </ExternalLink>
+                      <p className="mt-1 font-mono text-xs text-subtle">{m.stack}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </li>
+        )}
       </ul>
 
+      {!featured && (
       <Reveal>
         <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-dashed border-line p-5 sm:flex-row sm:items-center sm:gap-8">
           <p className="eyebrow flex-none">Also</p>
@@ -96,6 +122,7 @@ export default function Projects() {
           </ul>
         </div>
       </Reveal>
+      )}
 
       <div className="mt-20">
         <Reveal>

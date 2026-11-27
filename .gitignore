@@ -25,6 +25,7 @@ dist-ssr
 
 # Documents
 *.pdf
+!public/John-Ryan-Gomez-Resume.pdf
 
 
 
