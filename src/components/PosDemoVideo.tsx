@@ -48,7 +48,7 @@ export default function PosDemoVideo() {
     <section className="page mt-24">
       <div className="grid gap-10 md:grid-cols-[220px_1fr]">
         <div>
-          <p className="eyebrow">One-minute demo</p>
+          <p className="eyebrow">45-second demo</p>
           <p className="mt-3 hidden text-sm leading-relaxed text-subtle md:block">
             A real recording of the counter. Pick a chapter to jump to it.
           </p>

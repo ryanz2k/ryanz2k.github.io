@@ -79,8 +79,8 @@ export const POS_STACK = [
 
 /** Chapters for the demo recording: `at` is seconds into the video. */
 export const POS_VIDEO_BEATS = [
-  { at: 0, title: 'A normal sale', body: 'Items into the cart, cash payment, receipt.' },
-  { at: 15, title: 'The internet drops', body: 'The status bar turns to Offline.' },
-  { at: 20, title: 'Selling continues', body: 'Two more sales, queued on the device.' },
-  { at: 40, title: 'Back online', body: 'The queue syncs by itself. Nothing lost, nothing doubled.' },
+  { at: 0, title: 'A normal sale', body: 'Four items, cash payment, change and a receipt.' },
+  { at: 17, title: 'The internet drops', body: 'The status bar turns amber: Offline.' },
+  { at: 19, title: 'Selling continues', body: 'Two more sales, queued on the device to sync later.' },
+  { at: 39, title: 'Back online', body: 'The queue syncs by itself and the sales appear under Orders.' },
 ]
