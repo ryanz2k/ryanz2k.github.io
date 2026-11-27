@@ -20,7 +20,7 @@ export const PROFILE = {
    * Shows an explicit "Open to new roles" badge in the hero and contact
    * sections. Off by default because the site names a current employer.
    */
-  openToWork: false,
+  openToWork: true,
 }
 
 /** Headline numbers under the hero. Each one is backed by a section below. */
@@ -89,9 +89,9 @@ export const EXPERIENCE: ExperienceItem[] = [
       },
       {
         name: 'Lenka Charvátová',
-        role: 'WordPress Developer',
+        role: 'WordPress, SEO & Google Ads',
         period: 'Jun 2023 — Present',
-        note: 'Wellness site, content and newsletter integration.',
+        note: 'Natural-health practice with Czech, Slovak and English sites. I build and maintain the WordPress sites and landing pages, run the Czech and Slovak Google Ads search campaigns, and own conversion tracking in Tag Manager and GA4, plus SEO and tracking audits, the newsletter lead magnet and regular client reports.',
       },
       {
         name: 'PetJetCo',
@@ -140,7 +140,6 @@ export const PROJECTS: Project[] = [
     ],
     stack: ['Godot 4.5', 'GDScript', 'Firebase', 'Cloud Functions', 'React'],
     image: smartquestImg,
-    links: [{ label: 'Live', href: 'https://smartquest-uc.web.app/' }],
   },
   {
     title: 'Walnut Hi-Fi',
@@ -184,7 +183,6 @@ export const PROJECTS: Project[] = [
     ],
     stack: ['Next.js', 'React', 'Prisma', 'PayPal', 'Tailwind CSS'],
     image: elHealthImg,
-    links: [{ label: 'Live', href: 'https://el-health-wellness-production.up.railway.app/' }],
   },
   {
     title: 'EL Glam POS',
@@ -216,7 +214,7 @@ export const MORE_PROJECTS = [
 
 export const CLIENT_SITES = [
   { title: 'Zona Floors', kind: 'WordPress', href: 'https://www.zonafloors.com/', image: zonaImg },
-  { title: 'Lenka Charvátová', kind: 'WordPress', href: 'https://lenkacharvatova.com/', image: lenkaImg },
+  { title: 'Lenka Charvátová', kind: 'WordPress · Google Ads · SEO', href: 'https://lenkacharvatova.com/', image: lenkaImg },
   { title: 'PetJet', kind: 'Shopify', href: 'https://thepetjetco.com/', image: petjetImg },
 ]
 
@@ -227,7 +225,7 @@ export const STACK: { group: string; items: string[] }[] = [
   { group: 'Data', items: ['PostgreSQL', 'SQL Server', 'SQLite', 'Firestore', 'Firebase Realtime DB'] },
   { group: 'Mobile, desktop & games', items: ['Kotlin', 'Jetpack Compose', '.NET MAUI Blazor', 'Godot', 'Phaser'] },
   { group: 'Testing & DevOps', items: ['Vitest', 'Playwright', 'Testcontainers', 'Azure Pipelines', 'GitHub Actions', 'Docker', 'Caddy'] },
-  { group: 'Platforms & payments', items: ['WordPress', 'Shopify', 'PayPal', 'PayMongo', 'Google Ads & Analytics'] },
+  { group: 'Platforms & payments', items: ['WordPress', 'Shopify', 'PayPal', 'PayMongo', 'Google Ads', 'Google Tag Manager', 'GA4', 'SEO'] },
 ]
 
 export const EDUCATION = [

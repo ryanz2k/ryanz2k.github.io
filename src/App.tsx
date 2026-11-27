@@ -49,6 +49,23 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  useEffect(() => {
+    const root = document.documentElement
+    let frame = 0
+    const onMove = (e: MouseEvent) => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        root.style.setProperty('--cx', `${e.clientX}px`)
+        root.style.setProperty('--cy', `${e.clientY}px`)
+      })
+    }
+    window.addEventListener('mousemove', onMove, { passive: true })
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('mousemove', onMove)
+    }
+  }, [])
+
   return (
     <div id="top" className="min-h-screen">
       <a
@@ -57,6 +74,11 @@ export default function App() {
       >
         Skip to content
       </a>
+      {/* Soft glow that follows the cursor across the whole page */}
+      <div
+        aria-hidden
+        className="cursor-glow pointer-events-none fixed inset-0 -z-10"
+      />
       <Navbar route={route} theme={theme} onToggleTheme={toggle} onOpenPalette={() => setPaletteOpen(true)} />
       <main id="main">
         <AnimatePresence mode="wait" initial={false}>

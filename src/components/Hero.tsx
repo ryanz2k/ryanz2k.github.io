@@ -1,9 +1,8 @@
 import { Fragment } from 'react'
 import { FiArrowRight, FiFileText, FiGithub, FiLinkedin } from 'react-icons/fi'
 import { motion, useReducedMotion } from 'framer-motion'
-import profileImg from '../assets/profile.webp'
 import { IMPACT, PROFILE } from '../data/content'
-import { CountUp, EASE, onSpot, prefersReducedMotion } from './ui'
+import { CountUp, EASE, prefersReducedMotion } from './ui'
 
 const HEADLINE = ['I', 'build', 'ERP', 'systems', 'and', 'offline‑first', 'products.']
 const SUBLINE = ['From', 'component', 'library', 'to', 'production', 'pipeline.']
@@ -40,7 +39,7 @@ export default function Hero() {
   )
 
   return (
-    <section className="spot relative overflow-hidden" onMouseMove={onSpot}>
+    <section className="relative overflow-hidden">
       {/* Subtle grid backdrop */}
       <div
         aria-hidden
@@ -52,20 +51,14 @@ export default function Hero() {
         }}
       />
       <div className="page relative z-[2] pb-16 pt-16 sm:pb-24 sm:pt-24">
-        <motion.div {...fade(0)} className="flex flex-wrap items-center gap-3">
-          <img
-            src={profileImg}
-            alt={PROFILE.name}
-            width={40}
-            height={40}
-            className="h-10 w-10 rounded-full border border-line object-cover"
-          />
+        <motion.div {...fade(0)} className="flex flex-wrap items-center gap-x-4 gap-y-2">
+<p className="text-xl font-semibold tracking-tight text-fg sm:text-2xl">{PROFILE.name}</p>
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 font-mono text-xs text-accent">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:hidden" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
             </span>
-            {PROFILE.openToWork ? 'Open to new roles' : `${PROFILE.role} @ ${PROFILE.company}`}
+            {PROFILE.openToWork ? 'Open to new roles' : PROFILE.role}
           </span>
         </motion.div>
 
@@ -80,8 +73,8 @@ export default function Hero() {
         </h1>
 
         <motion.p {...fade(0.5)} className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-          Angular, .NET and TypeScript engineer in {PROFILE.location}. I ship design systems,
-          finance modules and the CI/CD that keeps them honest.
+          Software Engineer in Cebu. I ship design systems, finance modules and the CI/CD that keeps
+          them honest.
         </motion.p>
 
         <motion.div {...fade(0.6)} className="mt-9 flex flex-wrap gap-3">
