@@ -15,6 +15,7 @@ import {
   FiShoppingBag,
   FiSmartphone,
   FiSun,
+  FiTool,
 } from 'react-icons/fi'
 import { PROFILE } from '../data/content'
 import { goToSection } from '../hooks/useHashRoute'
@@ -56,6 +57,7 @@ export default function CommandPalette({
       { id: 'top', group: 'Go to', label: 'Home', icon: <FiHome />, run: () => goToSection('top') },
       { id: 'pos', group: 'Go to', label: 'Ryan’s POS case study', hint: 'Offline-first point of sale', icon: <FiShoppingBag />, run: () => void (window.location.hash = '#/pos') },
       { id: 'campus', group: 'Go to', label: 'CampusShare case study', hint: 'Android marketplace', icon: <FiSmartphone />, run: () => void (window.location.hash = '#/campusshare') },
+      { id: 'services', group: 'Go to', label: 'Services for businesses', icon: <FiTool />, run: () => goToSection('services') },
       { id: 'experience', group: 'Go to', label: 'Experience', icon: <FiBriefcase />, run: () => goToSection('experience') },
       { id: 'projects', group: 'Go to', label: 'Projects', icon: <FiGrid />, run: () => goToSection('projects') },
       { id: 'stack', group: 'Go to', label: 'Stack, education and certifications', icon: <FiLayers />, run: () => goToSection('stack') },

@@ -7,6 +7,7 @@ import { PROFILE } from '../data/content'
 
 const LINKS = [
   { id: 'work', label: 'Work' },
+  { id: 'services', label: 'Services' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'stack', label: 'Stack' },
@@ -111,7 +112,7 @@ export default function Navbar({
           <button
             type="button"
             onClick={onOpenPalette}
-            className="ml-1 hidden items-center gap-2 rounded-md border border-line px-2.5 py-1.5 text-xs text-subtle transition-colors hover:border-subtle hover:text-fg sm:inline-flex"
+            className="ml-1 hidden items-center gap-2 rounded-md border border-line px-2.5 py-1.5 text-xs text-subtle transition-colors hover:border-subtle hover:text-fg lg:inline-flex"
             aria-label="Open quick navigation"
           >
             Jump to… <kbd>Ctrl K</kbd>
@@ -119,7 +120,7 @@ export default function Navbar({
           <button
             type="button"
             onClick={onOpenPalette}
-            className="rounded-md p-2.5 text-muted transition-colors hover:bg-raised hover:text-fg sm:hidden"
+            className="rounded-md p-2.5 text-muted transition-colors hover:bg-raised hover:text-fg lg:hidden"
             aria-label="Open quick navigation"
           >
             <FiCommand size={16} />

@@ -55,6 +55,15 @@ export default function Experience() {
                               {c.name} <span className="font-normal text-subtle">· {c.role}</span>
                             </p>
                             {c.note && <p className="mt-1 text-sm text-muted">{c.note}</p>}
+                            {c.results && (
+                              <ul className="mt-2.5 flex flex-wrap gap-1.5">
+                                {c.results.map((r) => (
+                                  <li key={r} className="rounded-md border border-accent/25 bg-accent/10 px-2 py-0.5 font-mono text-[11px] text-accent">
+                                    {r}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
                           </div>
                           <p className="flex-none font-mono text-xs text-subtle">{c.period}</p>
                         </li>

@@ -124,7 +124,7 @@ export default function Projects() {
       </Reveal>
       )}
 
-      <div className="mt-20">
+      <div id="clients" className="mt-20 scroll-mt-24">
         <Reveal>
           <p className="eyebrow">Client websites</p>
           <h3 className="mt-3 text-xl font-semibold tracking-tight text-fg">WordPress & Shopify</h3>

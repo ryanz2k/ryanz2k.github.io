@@ -31,6 +31,65 @@ export const IMPACT = [
   { value: '4', label: 'business locations running software I deployed' },
 ]
 
+export interface Service {
+  id: 'systems' | 'websites' | 'ads'
+  title: string
+  summary: string
+  points: string[]
+  results?: { value: string; label: string }[]
+  resultsNote?: string
+  proof: { label: string; href: string }
+}
+
+/** What a business owner can hire me for. Every card links to proof on this site. */
+export const SERVICES: Service[] = [
+  {
+    id: 'systems',
+    title: 'Business systems',
+    summary: 'Point of sale, inventory, booking and back-office tools shaped around how your shop actually runs.',
+    points: [
+      'Keeps working when the internet drops',
+      'Local rules built in: VAT, Senior and PWD discounts, GCash and Maya',
+      'Installed, backed up and supported, with staff training',
+    ],
+    proof: { label: 'See the POS case study', href: '#/pos' },
+  },
+  {
+    id: 'websites',
+    title: 'Websites and online stores',
+    summary: 'WordPress and Shopify sites that load fast, read well on a phone and are easy for you to update.',
+    points: [
+      'New builds, redesigns and ongoing care',
+      'Multilingual sites and landing pages',
+      'Checkout, newsletter and booking integrations',
+    ],
+    proof: { label: 'See client websites', href: '#clients' },
+  },
+  {
+    id: 'ads',
+    title: 'Google Ads and tracking',
+    summary: 'Campaigns that spend on the right searches, and tracking you can trust when you read the numbers.',
+    points: [
+      'Search campaigns, keywords and ad copy',
+      'Conversion tracking in Tag Manager and GA4, consent included',
+      'SEO and tracking audits, plain-language monthly reports',
+    ],
+    results: [
+      { value: '+30%', label: 'click-through rate' },
+      { value: '−12%', label: 'cost per click' },
+      { value: '~0%', label: 'spend on irrelevant searches, from 10%' },
+    ],
+    resultsNote: 'One client’s Czech search campaign, first two weeks after I took it over (Nov 2026).',
+    proof: { label: 'See the client work', href: '#experience' },
+  },
+]
+
+export const WORKING_TERMS = [
+  { title: 'A price before any work', body: 'You approve a fixed price first. No surprise invoices.' },
+  { title: 'Every change written down', body: 'A dated log of what changed on your site, ads and tracking.' },
+  { title: 'Reports you can read', body: 'What was done, what it cost and what it changed, without jargon.' },
+]
+
 /** What a hiring manager wants to know before they email. */
 export const FIT = [
   { k: 'Roles', v: 'Full-stack, frontend or backend engineer' },
@@ -46,7 +105,7 @@ export interface ExperienceItem {
   meta: string
   points: string[]
   tags?: string[]
-  clients?: { name: string; role: string; period: string; note?: string }[]
+  clients?: { name: string; role: string; period: string; note?: string; results?: string[] }[]
 }
 
 export const EXPERIENCE: ExperienceItem[] = [
@@ -92,6 +151,7 @@ export const EXPERIENCE: ExperienceItem[] = [
         role: 'WordPress, SEO & Google Ads',
         period: 'Jun 2023 — Present',
         note: 'Natural-health practice with Czech, Slovak and English sites. I build and maintain the WordPress sites and landing pages, run the Czech and Slovak Google Ads search campaigns, and own conversion tracking in Tag Manager and GA4, plus SEO and tracking audits, the newsletter lead magnet and regular client reports.',
+        results: ['Click-through rate +30%', 'Cost per click −12%', 'Wasted ad spend 10% → ~0%'],
       },
       {
         name: 'PetJetCo',

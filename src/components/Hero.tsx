@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { IMPACT, PROFILE } from '../data/content'
 import { CountUp, EASE, prefersReducedMotion } from './ui'
 
-const HEADLINE = ['I', 'build', 'ERP', 'systems', 'and', 'offline‑first', 'products.']
+const HEADLINE = ['I', 'build', 'business', 'software', 'and', 'offline‑first', 'products.']
 const SUBLINE = ['From', 'component', 'library', 'to', 'production', 'pipeline.']
 
 export default function Hero() {
