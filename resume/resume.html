@@ -1,0 +1,112 @@
+<!doctype html>
+<!--
+  Source for public/John-Ryan-Gomez-Resume.pdf. Single column and plain text on
+  purpose, so applicant tracking systems can read it. To regenerate:
+    msedge --headless --disable-gpu --no-pdf-header-footer ^
+      --print-to-pdf="public\John-Ryan-Gomez-Resume.pdf" "resume\resume.html"
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>John Ryan Gomez — Software Engineer</title>
+    <style>
+      @page { size: A4; margin: 10mm 13mm; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 8.7pt/1.34 'Segoe UI', Arial, Helvetica, sans-serif; color: #18181b; }
+      h1 { margin: 0; font-size: 19pt; letter-spacing: -0.02em; }
+      .role { margin: 1pt 0 0; font-size: 11pt; color: #047857; font-weight: 600; }
+      .contact { margin: 5pt 0 0; color: #3f3f46; }
+      .contact a { color: inherit; text-decoration: none; }
+      h2 { margin: 8pt 0 4pt; padding-bottom: 2.5pt; border-bottom: 1px solid #d4d4d8; font-size: 8.6pt; letter-spacing: 0.1em; text-transform: uppercase; color: #047857; }
+      .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+      .row b { font-size: 9.5pt; }
+      .when { color: #52525b; white-space: nowrap; font-size: 9pt; }
+      .sub { color: #52525b; margin: 0 0 2pt; }
+      ul { margin: 2pt 0 0; padding-left: 13pt; }
+      li { margin-bottom: 1pt; }
+      .job { margin-bottom: 5pt; break-inside: avoid; }
+      p { margin: 0; }
+      .skills p { margin-bottom: 2pt; }
+    </style>
+  </head>
+  <body>
+    <h1>John Ryan Gomez</h1>
+    <p class="role">Software Engineer · Angular, .NET, TypeScript</p>
+    <p class="contact">
+      Cebu, Philippines · <a href="mailto:johnryangomez812@gmail.com">johnryangomez812@gmail.com</a> ·
+      <a href="https://ryanz2k.github.io/Portfolio/">ryanz2k.github.io/Portfolio</a> ·
+      <a href="https://www.linkedin.com/in/ryanz2k/">linkedin.com/in/ryanz2k</a> ·
+      <a href="https://github.com/ryanz2k">github.com/ryanz2k</a>
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      Full-stack engineer who builds ERP modules and the component library they run on, from the .NET API to the
+      Angular UI and the CI/CD pipeline. Outside work I designed, built and deployed an offline-first point of sale
+      with about 4,100 automated tests.
+    </p>
+
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="row"><b>Software Engineer, Avanta Innovations Corporation</b><span class="when">Sep 2026 – Present</span></div>
+      <p class="sub">Cebu, Philippines · Angular, TypeScript, C# / .NET, SQL Server, Azure DevOps</p>
+      <ul>
+        <li>Co-built the in-house Angular component library and design system used by every company frontend: data grid, tree, dock layout, search, calculator and amount inputs, date ranges, dialogs and alerts. Merged 43 pull requests and took it from first build to its first stable releases.</li>
+        <li>Built and hardened CI/CD on Azure Pipelines for the library and the ERP: automated prerelease publishing to the package feed, stable cross-browser tests on Chromium and WebKit, per-project coverage floors, NuGet and npm vulnerability scanning, and scripted IIS deployments.</li>
+        <li>Delivered 14 ERP modules end to end (.NET API to Angular UI), including Journal Voucher, General Ledger, Trial Balance with drill-down to journal entries, Income Statement, Subsidiary Ledgers, Posting Periods, Canvass, Request for Purchase and Sales Quote.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="row"><b>Full-Stack Developer Intern, EL Glam</b><span class="when">Jan 2026 – Jun 2026</span></div>
+      <p class="sub">Cebu, Philippines · .NET MAUI Blazor, EF Core, SQLite, Firebase, Next.js, PayPal</p>
+      <ul>
+        <li>Built a multi-branch point of sale (offline SQLite at each branch, synced to Firebase) with receipt printing and staff commission calculation, and a PayPal-integrated e-commerce site.</li>
+        <li>Rolled both out across four locations, with automated financial reporting, Brevo marketing integration, system testing and staff training.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="row"><b>Web &amp; E-commerce Developer, Freelance</b><span class="when">Nov 2022 – Present</span></div>
+      <p class="sub">Remote · clients in the US, Australia and the UK</p>
+      <ul>
+        <li>GlobeLight Marketing (Nov 2022 – Present) and Lenka Charvátová (Jun 2023 – Present): WordPress site builds, SEO, content and newsletter integration.</li>
+        <li>PetJetCo (Jan 2025 – Oct 2026): managed the Shopify store, Google Ads, Merchant Center and Analytics; fixed product feed and SKU issues and set up conversion tracking.</li>
+      </ul>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="job">
+      <div class="row"><b>Ryan’s POS — offline-first point of sale (solo)</b><span class="when">Oct – Nov 2026</span></div>
+      <p class="sub">Angular PWA, Dexie/IndexedDB, NestJS, Prisma, PostgreSQL, Docker Compose, Caddy, Playwright, Testcontainers</p>
+      <ul>
+        <li>Counter keeps selling with no connection; an idempotent sync protocol with device-generated IDs makes retries harmless, and the server re-verifies every sale with a shared TypeScript rules package.</li>
+        <li>Philippine retail rules built in: VAT breakdowns, Senior Citizen and PWD discounts, X and Z readings, gap-free invoice numbers, GCash and Maya; append-only money and stock records in integer centavos.</li>
+        <li>About 4,100 unit, integration and end-to-end tests, 31 architecture decision records, and a CI pipeline that builds the production stack and tests HTTPS, backup-and-restore and an offline counter against it.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="row"><b>CampusShare — student marketplace for Android</b><span class="when">2026</span></div>
+      <p class="sub">Kotlin, Jetpack Compose, Hilt, Firebase, PayMongo, Next.js admin panel</p>
+      <ul>
+        <li>Buy-and-rent marketplace with an escrow-style wallet that holds payment until hand-over is confirmed, ID verification, and PayMongo top-ups (GCash, Maya, QR Ph).</li>
+        <li>Firestore security rules covered by an emulator test suite of several hundred checks, written after tracing real rule bugs.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="row"><b>SmartQuest — gamified learning app (capstone, team of 4)</b><span class="when">2026</span></div>
+      <p class="sub">Godot 4.5, GDScript, Firebase, Cloud Functions, React · top contributor on the Godot client</p>
+    </div>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><b>Languages:</b> TypeScript, C#, Kotlin, SQL, JavaScript, GDScript</p>
+      <p><b>Frontend:</b> Angular, React, Next.js, Tailwind CSS, PWA and service workers, IndexedDB (Dexie)</p>
+      <p><b>Backend and data:</b> ASP.NET Core, NestJS, Node.js, Prisma, EF Core, PostgreSQL, SQL Server, SQLite, Firestore</p>
+      <p><b>Testing and DevOps:</b> Vitest, Playwright, Testcontainers, Azure Pipelines, GitHub Actions, Docker, Caddy</p>
+      <p><b>Platforms:</b> Firebase, WordPress, Shopify, PayPal, PayMongo, Google Ads and Analytics</p>
+    </div>
+
+    <h2>Education and certifications</h2>
+    <div class="row"><b>BS Information Technology, University of Cebu – Banilad</b><span class="when">2022 – 2026 · High Honors, five-time Dean’s Lister</span></div>
+    <p>Cisco CCNA · Cisco Cybersecurity Essentials · Cisco Networking Essentials · TESDA NC II, Computer Systems Servicing</p>
+  </body>
+</html>

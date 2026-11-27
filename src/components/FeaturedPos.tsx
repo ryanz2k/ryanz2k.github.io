@@ -1,6 +1,7 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 import { POS } from '../data/pos'
-import { Chips, Reveal } from './ui'
+import { Chips, CountUp, Reveal, onSpot } from './ui'
+import Tilt from './Tilt'
 import PosScreen from './PosScreen'
 
 export default function FeaturedPos() {
@@ -13,7 +14,8 @@ export default function FeaturedPos() {
         <Reveal delay={0.05}>
           <a
             href="#/pos"
-            className="group mt-5 grid overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-subtle lg:grid-cols-[1fr_1.15fr]"
+            onMouseMove={onSpot}
+            className="spot group mt-5 grid overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-subtle lg:grid-cols-[1fr_1.15fr]"
           >
             <div className="flex flex-col p-6 sm:p-10">
               <p className="font-mono text-xs text-subtle">2026 · Solo build</p>
@@ -25,7 +27,7 @@ export default function FeaturedPos() {
                 {POS.stats.map((s) => (
                   <div key={s.label}>
                     <dt className="sr-only">{s.label}</dt>
-                    <dd className="text-xl font-semibold tracking-tight text-fg sm:text-2xl">{s.value}</dd>
+                    <dd className="text-xl font-semibold tracking-tight text-fg sm:text-2xl"><CountUp value={s.value} /></dd>
                     <dd className="mt-1 text-xs leading-snug text-subtle">{s.label}</dd>
                   </div>
                 ))}
@@ -40,9 +42,9 @@ export default function FeaturedPos() {
             </div>
 
             <div className="relative flex items-center justify-center overflow-hidden border-t border-line bg-gradient-to-br from-emerald-500/10 via-transparent to-sky-500/10 p-5 sm:p-10 lg:border-l lg:border-t-0">
-              <div className="w-full overflow-hidden rounded-xl shadow-2xl shadow-black/40 ring-1 ring-black/10 transition-transform duration-500 group-hover:scale-[1.015]">
+              <Tilt className="w-full overflow-hidden rounded-xl shadow-2xl shadow-black/40 ring-1 ring-black/10">
                 <PosScreen name="pos-counter-desktop" alt="Ryan’s POS counter screen with an order in the cart" eager />
-              </div>
+              </Tilt>
             </div>
           </a>
         </Reveal>

@@ -15,7 +15,29 @@ export const PROFILE = {
   email: 'johnryangomez812@gmail.com',
   linkedin: 'https://www.linkedin.com/in/ryanz2k/',
   github: 'https://github.com/ryanz2k',
+  resume: `${import.meta.env.BASE_URL}John-Ryan-Gomez-Resume.pdf`,
+  /**
+   * Shows an explicit "Open to new roles" badge in the hero and contact
+   * sections. Off by default because the site names a current employer.
+   */
+  openToWork: false,
 }
+
+/** Headline numbers under the hero. Each one is backed by a section below. */
+export const IMPACT = [
+  { value: '14', label: 'ERP modules shipped, API to UI' },
+  { value: '43', label: 'pull requests merged into the component library' },
+  { value: '4,100+', label: 'automated tests on a product I built alone' },
+  { value: '4', label: 'business locations running software I deployed' },
+]
+
+/** What a hiring manager wants to know before they email. */
+export const FIT = [
+  { k: 'Roles', v: 'Full-stack, frontend or backend engineer' },
+  { k: 'Strongest in', v: 'Angular · .NET · TypeScript · PostgreSQL / SQL Server' },
+  { k: 'Based in', v: 'Cebu, Philippines (UTC+8) · on-site, hybrid or remote' },
+  { k: 'Clients so far', v: 'Philippines, US, Australia, UK' },
+]
 
 export interface ExperienceItem {
   role: string

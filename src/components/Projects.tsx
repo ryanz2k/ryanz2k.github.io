@@ -1,10 +1,10 @@
 import { FiArrowUpRight, FiLock } from 'react-icons/fi'
 import { CLIENT_SITES, MORE_PROJECTS, PROJECTS, type Project } from '../data/content'
-import { Chips, ExternalLink, Reveal, Section } from './ui'
+import { Chips, ExternalLink, Reveal, Section, onSpot } from './ui'
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card flex h-full flex-col overflow-hidden">
+    <article onMouseMove={onSpot} className="card spot lift group flex h-full flex-col overflow-hidden">
       <div className="relative aspect-[16/9] overflow-hidden border-b border-line bg-raised">
         {project.image ? (
           <img
@@ -12,7 +12,7 @@ function ProjectCard({ project }: { project: Project }) {
             alt={`${project.title} screenshot`}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
           />
         ) : (
           <div className="flex h-full items-center justify-center gap-6 bg-gradient-to-br from-accent/15 via-transparent to-sky-500/10 p-6">
@@ -48,7 +48,7 @@ function ProjectCard({ project }: { project: Project }) {
         <Chips items={project.stack} className="mt-5" />
         <div className="mt-auto flex flex-wrap items-center gap-4 pt-6 text-sm">
           {project.links?.map((l) => (
-            <ExternalLink key={l.href} href={l.href} className="inline-flex items-center gap-1 font-medium text-fg hover:text-accent">
+            <ExternalLink key={l.href} href={l.href} className="relative z-[2] inline-flex items-center gap-1 font-medium text-fg hover:text-accent">
               {l.label} <FiArrowUpRight size={14} />
             </ExternalLink>
           ))}
@@ -106,7 +106,7 @@ export default function Projects() {
           {CLIENT_SITES.map((s, i) => (
             <li key={s.title}>
               <Reveal delay={i * 0.05}>
-                <ExternalLink href={s.href} className="card group block overflow-hidden transition-colors hover:border-subtle">
+                <ExternalLink href={s.href} className="card lift group block overflow-hidden">
                   <div className="aspect-[16/10] overflow-hidden border-b border-line bg-raised">
                     <img
                       src={s.image}

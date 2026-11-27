@@ -1,9 +1,12 @@
-import { useEffect, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { FiArrowLeft, FiMail, FiRefreshCw, FiServer, FiShield, FiSmartphone } from 'react-icons/fi'
 import { PROFILE } from '../data/content'
 import { POS, POS_FEATURES, POS_PROBLEMS, POS_QUALITY, POS_STACK, posShot } from '../data/pos'
 import PosScreen from './PosScreen'
-import { Chips, Reveal } from './ui'
+import { Chips, CountUp, Reveal } from './ui'
+import SyncDemo from './SyncDemo'
+import Lightbox from './Lightbox'
+import { restoreScroll } from '../hooks/useHashRoute'
 
 function Box({
   icon,
@@ -92,6 +95,8 @@ const GALLERY = [
 ]
 
 export default function PosCaseStudy() {
+  const [zoom, setZoom] = useState<number | null>(null)
+  useEffect(restoreScroll, [])
   useEffect(() => {
     const prev = document.title
     document.title = 'Ryan’s POS — case study · John Ryan Gomez'
@@ -172,13 +177,28 @@ export default function PosCaseStudy() {
         </div>
       </section>
 
+      {/* Interactive sync demo */}
+      <section className="page mt-24">
+        <div className="grid gap-10 md:grid-cols-[220px_1fr]">
+          <div>
+            <p className="eyebrow">Offline sync</p>
+            <p className="mt-3 hidden text-sm leading-relaxed text-subtle md:block">
+              The core idea, small enough to play with.
+            </p>
+          </div>
+          <Reveal>
+            <SyncDemo />
+          </Reveal>
+        </div>
+      </section>
+
       {/* Hard problems */}
       <section className="page mt-24">
         <div className="grid gap-10 md:grid-cols-[220px_1fr]">
           <p className="eyebrow">Hard parts</p>
           <div className="grid gap-4 sm:grid-cols-2">
             {POS_PROBLEMS.map((p, i) => (
-              <Reveal key={p.title} delay={(i % 2) * 0.05} className="card p-6">
+              <Reveal key={p.title} delay={(i % 2) * 0.05} className="card lift p-6">
                 <h3 className="font-semibold text-fg">{p.title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{p.body}</p>
               </Reveal>
@@ -210,24 +230,28 @@ export default function PosCaseStudy() {
           <div className="grid gap-10 md:grid-cols-[220px_1fr]">
             <p className="eyebrow">In use</p>
             <div className="grid gap-6 sm:grid-cols-2">
-              {gallery.map((g) => (
+              {gallery.map((g, i) => (
                 <Reveal key={g.name}>
                   <figure>
-                    <a
-                      href={posShot(g.name)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block overflow-hidden rounded-xl border border-line transition-colors hover:border-subtle"
-                      aria-label={`${g.caption} (opens full size)`}
+                    <button
+                      type="button"
+                      onClick={() => setZoom(i)}
+                      className="lift block w-full cursor-zoom-in overflow-hidden rounded-xl border border-line"
+                      aria-label={`${g.caption} (view larger)`}
                     >
                       <PosScreen name={g.name} alt={g.alt} />
-                    </a>
+                    </button>
                     <figcaption className="mt-2 text-sm text-subtle">{g.caption}</figcaption>
                   </figure>
                 </Reveal>
               ))}
             </div>
           </div>
+          <Lightbox
+            shots={gallery.map((g) => ({ src: posShot(g.name)!, alt: g.alt, caption: g.caption }))}
+            index={zoom}
+            onIndex={setZoom}
+          />
         </section>
       )}
 
@@ -257,7 +281,7 @@ export default function PosCaseStudy() {
               <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line lg:grid-cols-4">
                 {POS_QUALITY.map((q) => (
                   <div key={q.label} className="bg-surface p-5">
-                    <dd className="text-2xl font-semibold tracking-tight text-fg">{q.value}</dd>
+                    <dd className="text-2xl font-semibold tracking-tight text-fg"><CountUp value={q.value} /></dd>
                     <dt className="mt-1 text-xs leading-snug text-subtle">{q.label}</dt>
                   </div>
                 ))}
