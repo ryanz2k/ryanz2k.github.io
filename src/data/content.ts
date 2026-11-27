@@ -16,7 +16,7 @@ export const PROFILE = {
   github: 'https://github.com/ryanz2k',
   resume: `${import.meta.env.BASE_URL}John-Ryan-Gomez-Resume.pdf`,
   /** GoatCounter site code for visit counting; leave empty to switch analytics off. */
-  goatcounter: '',
+  goatcounter: 'ryanz2k',
   /**
    * Shows an explicit "Open to new roles" badge in the hero and contact
    * sections. Off by default because the site names a current employer.
