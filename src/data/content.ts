@@ -123,7 +123,7 @@ export const PROJECTS: Project[] = [
     highlights: [
       'Escrow-style wallet with PayMongo top-ups (GCash, Maya, QR Ph)',
       'ID verification and live-location safety sharing',
-      'Security rules covered by a 781-check emulator suite',
+      'Security rules covered by a 981-check emulator suite',
     ],
     stack: ['Kotlin', 'Jetpack Compose', 'Hilt', 'Firebase', 'PayMongo', 'Next.js'],
     note: 'Private repository',

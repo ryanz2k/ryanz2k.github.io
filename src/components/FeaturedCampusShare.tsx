@@ -17,7 +17,7 @@ export default function FeaturedCampusShare() {
             onMouseMove={onSpot}
             className="spot group grid overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-subtle lg:grid-cols-[1.15fr_1fr]"
           >
-            <div className="relative order-2 flex items-end justify-center gap-4 overflow-hidden border-t border-line bg-gradient-to-br from-sky-500/10 via-transparent to-emerald-500/10 px-6 pt-10 sm:gap-6 lg:order-1 lg:border-r lg:border-t-0">
+            <div className="relative order-2 flex items-end justify-center overflow-hidden border-t border-line bg-gradient-to-br from-sky-500/10 via-transparent to-emerald-500/10 px-4 pt-10 sm:px-8 lg:order-1 lg:border-r lg:border-t-0">
               {shots.map(
                 (src, i) =>
                   src && (
@@ -25,10 +25,12 @@ export default function FeaturedCampusShare() {
                       key={src}
                       src={src}
                       alt=""
-                      className={`w-[30%] max-w-[190px] transition-transform duration-500 ${
+                      className={`flex-none transition-transform duration-500 ${
                         i === 1
-                          ? 'z-[2] translate-y-6 group-hover:translate-y-3'
-                          : `translate-y-16 opacity-90 group-hover:translate-y-12 ${i === 0 ? '-rotate-3' : 'rotate-3'}`
+                          ? 'relative z-[2] w-[42%] max-w-[260px] translate-y-6 group-hover:translate-y-3'
+                          : `w-[36%] max-w-[225px] translate-y-20 opacity-90 group-hover:translate-y-16 ${
+                              i === 0 ? '-mr-[8%] -rotate-3' : '-ml-[8%] rotate-3'
+                            }`
                       }`}
                     />
                   ),
