@@ -69,6 +69,8 @@ export default function Projects() {
   // the grid then goes to the smaller projects.
   const featured = !!campusShot('app-home')
   const projects = PROJECTS.filter((p) => !(featured && p.title === 'CampusShare'))
+  // The smaller projects fill the last grid cell when that keeps the rows even.
+  const inGrid = projects.length % 2 === 1
 
   return (
     <Section
@@ -85,7 +87,7 @@ export default function Projects() {
             </Reveal>
           </li>
         ))}
-        {featured && (
+        {inGrid && (
           <li>
             <Reveal delay={(projects.length % 2) * 0.06} className="h-full">
               <div className="flex h-full flex-col justify-center rounded-2xl border border-dashed border-line p-8">
@@ -106,7 +108,7 @@ export default function Projects() {
         )}
       </ul>
 
-      {!featured && (
+      {!inGrid && (
       <Reveal>
         <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-dashed border-line p-5 sm:flex-row sm:items-center sm:gap-8">
           <p className="eyebrow flex-none">Also</p>

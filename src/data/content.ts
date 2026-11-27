@@ -1,7 +1,6 @@
 import elHealthImg from '../assets/el-health.webp'
 import elGlamImg from '../assets/el-glam-pos.webp'
 import smartquestImg from '../assets/smartquest.webp'
-import walnutImg from '../assets/walnut-hifi.webp'
 import pulseImg from '../assets/pulse.webp'
 import zonaImg from '../assets/zonafloors wordpress.webp'
 import lenkaImg from '../assets/lenka wordpress.webp'
@@ -200,19 +199,6 @@ export const PROJECTS: Project[] = [
     ],
     stack: ['Godot 4.5', 'GDScript', 'Firebase', 'Cloud Functions', 'React'],
     image: smartquestImg,
-  },
-  {
-    title: 'Walnut Hi-Fi',
-    kind: 'Personal project',
-    summary:
-      'A Spotify player styled as a 1960s walnut console, with time-synced lyrics that remember a per-song offset.',
-    highlights: [
-      'Spotify Web API and Playback SDK with PKCE sign-in',
-      'Recovers cleanly from failed plays and lyric-service outages',
-      'Unit-tested with Vitest and Testing Library',
-    ],
-    stack: ['React', 'TypeScript', 'Vite', 'Spotify SDK', 'Vitest'],
-    image: walnutImg,
   },
   {
     title: 'Pulse',

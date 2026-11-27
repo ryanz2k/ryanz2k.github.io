@@ -3,5 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Portfolio/',
+  // Relative, so the build works at any path: /Portfolio/ today, the domain root later.
+  base: './',
 })
