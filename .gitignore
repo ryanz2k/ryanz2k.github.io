@@ -23,7 +23,13 @@ dist-ssr
 *.sln
 *.sw?
 
-# Resume / sensitive documents
+# Documents
 *.pdf
 
 
+
+# Brainstorm mockups
+.superpowers/
+
+# Local browser-automation output
+.playwright-mcp/
