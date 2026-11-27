@@ -83,10 +83,12 @@ function Architecture() {
 }
 
 const GALLERY = [
-  { name: 'pos-reports-desktop', alt: 'Reports dashboard with sales KPIs and charts', caption: 'Back-office reports' },
-  { name: 'pos-offline-desktop', alt: 'Counter selling while offline', caption: 'Selling with no connection' },
-  { name: 'pos-extra-stock', alt: 'Stock levels with low and out-of-stock badges', caption: 'Live stock levels' },
-  { name: 'pos-extra-reading', alt: 'Shift Z-reading summary', caption: 'Shift close and Z-reading' },
+  { name: 'pos-reports-desktop', alt: 'Reports overview with net sales, transactions, gross profit and a sales-by-day chart', caption: 'Reports: 7-day overview with gross profit and payment mix' },
+  { name: 'pos-offline-desktop', alt: 'Counter ringing up an order while the status bar shows Offline, 2 waiting to sync', caption: 'Selling offline — two sales queued, synced on reconnect' },
+  { name: 'pos-extra-shift', alt: 'Shift screen with a live Z-reading, VAT breakdown and a balanced cash drawer', caption: 'Shift close: live Z-reading, VAT and a balanced drawer' },
+  { name: 'pos-extra-stock', alt: 'Stock screen with in-stock, low and out-of-stock badges and an item movement history', caption: 'Append-only stock ledger with low and out-of-stock alerts' },
+  { name: 'pos-extra-receipt', alt: 'Payment complete screen with change due and the printed sales invoice', caption: 'Payment, change due and a gap-free sales invoice' },
+  { name: 'pos-extra-report-items', alt: 'Item report with sales and margin by category and by item', caption: 'Margins by category and item' },
 ]
 
 export default function PosCaseStudy() {
@@ -211,9 +213,15 @@ export default function PosCaseStudy() {
               {gallery.map((g) => (
                 <Reveal key={g.name}>
                   <figure>
-                    <div className="overflow-hidden rounded-xl border border-line">
+                    <a
+                      href={posShot(g.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block overflow-hidden rounded-xl border border-line transition-colors hover:border-subtle"
+                      aria-label={`${g.caption} (opens full size)`}
+                    >
                       <PosScreen name={g.name} alt={g.alt} />
-                    </div>
+                    </a>
                     <figcaption className="mt-2 text-sm text-subtle">{g.caption}</figcaption>
                   </figure>
                 </Reveal>
