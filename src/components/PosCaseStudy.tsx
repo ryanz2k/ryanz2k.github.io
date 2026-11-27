@@ -5,6 +5,7 @@ import { POS, POS_FEATURES, POS_PROBLEMS, POS_QUALITY, POS_STACK, posShot } from
 import PosScreen from './PosScreen'
 import { Chips, CountUp, Reveal } from './ui'
 import SyncDemo from './SyncDemo'
+import PosDemoVideo from './PosDemoVideo'
 import Lightbox from './Lightbox'
 import { restoreScroll } from '../hooks/useHashRoute'
 
@@ -148,6 +149,9 @@ export default function PosCaseStudy() {
           </div>
         </Reveal>
       </div>
+
+      {/* Demo recording (renders nothing until the video files exist) */}
+      <PosDemoVideo />
 
       {/* Problem */}
       <section className="page mt-24 grid gap-10 md:grid-cols-[220px_1fr]">

@@ -76,3 +76,11 @@ export const POS_STACK = [
   'Docker Compose',
   'Caddy',
 ]
+
+/** Chapters for the demo recording: `at` is seconds into the video. */
+export const POS_VIDEO_BEATS = [
+  { at: 0, title: 'A normal sale', body: 'Items into the cart, cash payment, receipt.' },
+  { at: 15, title: 'The internet drops', body: 'The status bar turns to Offline.' },
+  { at: 20, title: 'Selling continues', body: 'Two more sales, queued on the device.' },
+  { at: 40, title: 'Back online', body: 'The queue syncs by itself. Nothing lost, nothing doubled.' },
+]
