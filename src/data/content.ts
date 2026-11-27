@@ -15,6 +15,8 @@ export const PROFILE = {
   linkedin: 'https://www.linkedin.com/in/ryanz2k/',
   github: 'https://github.com/ryanz2k',
   resume: `${import.meta.env.BASE_URL}John-Ryan-Gomez-Resume.pdf`,
+  /** GoatCounter site code for visit counting; leave empty to switch analytics off. */
+  goatcounter: '',
   /**
    * Shows an explicit "Open to new roles" badge in the hero and contact
    * sections. Off by default because the site names a current employer.
