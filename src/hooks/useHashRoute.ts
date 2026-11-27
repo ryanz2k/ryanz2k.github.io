@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react'
 
-export type Route = 'home' | 'pos' | 'campusshare'
+export type Route = 'home' | 'pos' | 'campusshare' | 'bookings'
 
 const routeFromHash = (hash: string): Route =>
-  hash.startsWith('#/pos') ? 'pos' : hash.startsWith('#/campusshare') ? 'campusshare' : 'home'
+  hash.startsWith('#/pos')
+    ? 'pos'
+    : hash.startsWith('#/campusshare')
+      ? 'campusshare'
+      : hash.startsWith('#/bookings')
+        ? 'bookings'
+        : 'home'
 
 /**
- * Tiny hash router: `#/pos` and `#/campusshare` are case studies, anything
+ * Tiny hash router: `#/pos`, `#/campusshare` and `#/bookings` are case studies, anything
  * else is the home page (where plain `#section` hashes are in-page anchors).
  * Works on GitHub Pages without a 404 fallback. Each page restores its own
  * scroll position when it mounts, after the page transition.

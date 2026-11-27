@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FeaturedPos from './components/FeaturedPos'
 import FeaturedCampusShare from './components/FeaturedCampusShare'
+import FeaturedBookings from './components/FeaturedBookings'
+import BookingsCaseStudy from './components/BookingsCaseStudy'
 import Services from './components/Services'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
@@ -23,6 +25,7 @@ function Home() {
     <>
       <Hero />
       <FeaturedPos />
+      <FeaturedBookings />
       <FeaturedCampusShare />
       <Services />
       <Experience />
@@ -91,7 +94,15 @@ export default function App() {
             exit={reduce ? undefined : { opacity: 0, y: -8 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
           >
-            {route === 'pos' ? <PosCaseStudy /> : route === 'campusshare' ? <CampusShareCaseStudy /> : <Home />}
+            {route === 'pos' ? (
+              <PosCaseStudy />
+            ) : route === 'campusshare' ? (
+              <CampusShareCaseStudy />
+            ) : route === 'bookings' ? (
+              <BookingsCaseStudy />
+            ) : (
+              <Home />
+            )}
           </motion.div>
         </AnimatePresence>
       </main>
