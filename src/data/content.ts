@@ -53,7 +53,7 @@ export const SERVICES: Service[] = [
       'Local rules built in: VAT, Senior and PWD discounts, GCash and Maya',
       'Installed, backed up and supported, with staff training',
     ],
-    proof: { label: 'See the POS and booking case studies', href: '#work' },
+    proof: { label: 'See the POS, booking and payroll case studies', href: '#work' },
   },
   {
     id: 'websites',

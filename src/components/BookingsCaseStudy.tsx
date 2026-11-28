@@ -297,8 +297,8 @@ export default function BookingsCaseStudy() {
           <a href="#work" className="inline-flex items-center gap-1.5 text-muted hover:text-fg">
             <FiArrowLeft size={14} /> Back to work
           </a>
-          <a href="#/campusshare" className="inline-flex items-center gap-1.5 text-muted hover:text-fg">
-            Next: CampusShare <FiArrowRight size={14} />
+          <a href="#/payroll" className="inline-flex items-center gap-1.5 text-muted hover:text-fg">
+            Next: HR &amp; Payroll System <FiArrowRight size={14} />
           </a>
         </div>
       </section>

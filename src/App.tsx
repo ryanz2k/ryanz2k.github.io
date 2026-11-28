@@ -8,6 +8,8 @@ import FeaturedPos from './components/FeaturedPos'
 import FeaturedCampusShare from './components/FeaturedCampusShare'
 import FeaturedBookings from './components/FeaturedBookings'
 import BookingsCaseStudy from './components/BookingsCaseStudy'
+import FeaturedPayroll from './components/FeaturedPayroll'
+import PayrollCaseStudy from './components/PayrollCaseStudy'
 import Services from './components/Services'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
@@ -26,6 +28,7 @@ function Home() {
       <Hero />
       <FeaturedPos />
       <FeaturedBookings />
+      <FeaturedPayroll />
       <FeaturedCampusShare />
       <Services />
       <Experience />
@@ -100,6 +103,8 @@ export default function App() {
               <CampusShareCaseStudy />
             ) : route === 'bookings' ? (
               <BookingsCaseStudy />
+            ) : route === 'payroll' ? (
+              <PayrollCaseStudy />
             ) : (
               <Home />
             )}
