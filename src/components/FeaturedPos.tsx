@@ -43,7 +43,7 @@ export default function FeaturedPos() {
 
             <div className="relative flex items-center justify-center overflow-hidden border-t border-line bg-gradient-to-br from-emerald-500/10 via-transparent to-sky-500/10 p-5 sm:p-10 lg:border-l lg:border-t-0">
               <Tilt className="w-full overflow-hidden rounded-xl shadow-2xl shadow-black/40 ring-1 ring-black/10">
-                <PosScreen name="pos-counter-desktop" alt="Ryan’s POS counter screen with an order in the cart" eager />
+                <PosScreen name="pos-counter-desktop" alt="POS System counter screen with an order in the cart" eager />
               </Tilt>
             </div>
           </a>

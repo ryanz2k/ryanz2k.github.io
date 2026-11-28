@@ -66,7 +66,7 @@ export default function PosDemoVideo() {
           preload="metadata"
           onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
           onPlay={() => setStarted(true)}
-          aria-label="Screen recording of Ryan’s POS selling online, then offline, then syncing"
+          aria-label="Screen recording of the POS System selling online, then offline, then syncing"
         >
           {webm && <source src={webm} type="video/webm" />}
           {mp4 && <source src={mp4} type="video/mp4" />}

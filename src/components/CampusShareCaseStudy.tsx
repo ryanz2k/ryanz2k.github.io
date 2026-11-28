@@ -239,7 +239,7 @@ export default function CampusShareCaseStudy() {
             <FiArrowLeft size={14} /> Back to work
           </a>
           <a href="#/pos" className="inline-flex items-center gap-1.5 text-muted hover:text-fg">
-            Next: Ryan’s POS <FiArrowRight size={14} />
+            Next: POS System <FiArrowRight size={14} />
           </a>
         </div>
       </section>

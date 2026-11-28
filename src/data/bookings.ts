@@ -10,7 +10,7 @@ import settings from '../assets/bookings/desktop-4-owner-settings.webp'
 import flow from '../assets/bookings/booking-flow.mp4'
 
 export const BOOKINGS = {
-  name: 'Ryan’s Bookings',
+  name: 'Booking System',
   tagline: 'Online booking with a deposit, for salons and clinics.',
   pitch:
     'A customer picks a service, a staff member and a time, pays a deposit, and the chair is theirs. The owner runs the day from a calendar on their phone. Two people can never end up with the same slot.',

@@ -100,7 +100,7 @@ export default function PosCaseStudy() {
   useEffect(restoreScroll, [])
   useEffect(() => {
     const prev = document.title
-    document.title = 'Ryan’s POS — case study · John Ryan Gomez'
+    document.title = 'POS System — case study · John Ryan Gomez'
     return () => {
       document.title = prev
     }
@@ -144,7 +144,7 @@ export default function PosCaseStudy() {
         <Reveal>
           <div className="overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-emerald-500/10 via-transparent to-sky-500/10 p-3 sm:p-8">
             <div className="overflow-hidden rounded-xl shadow-2xl shadow-black/40 ring-1 ring-black/10">
-              <PosScreen name="pos-counter-desktop" alt="Ryan’s POS counter screen with an order in the cart" eager />
+              <PosScreen name="pos-counter-desktop" alt="POS System counter screen with an order in the cart" eager />
             </div>
           </div>
         </Reveal>
@@ -164,7 +164,7 @@ export default function PosCaseStudy() {
             and Maya next to cash.
           </p>
           <p>
-            I designed Ryan’s POS so the counter never depends on the network, and so every peso still
+            I designed the POS System so the counter never depends on the network, and so every peso still
             reconciles on the server afterwards. It’s sold outright and installed per client, with no
             subscription.
           </p>
@@ -318,7 +318,7 @@ export default function PosCaseStudy() {
           <div className="flex flex-col gap-6 rounded-2xl border border-line bg-surface p-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-lg font-semibold text-fg">Run a café, salon or shop in the Philippines?</p>
-              <p className="mt-1 text-muted">I install and support Ryan’s POS per business. The source is available to employers on request.</p>
+              <p className="mt-1 text-muted">I install and support the POS System per business. The source is available to employers on request.</p>
             </div>
             <a href={`mailto:${PROFILE.email}?subject=Ryan%E2%80%99s%20POS`} className="btn-primary flex-none">
               <FiMail size={15} /> Get in touch
@@ -330,7 +330,7 @@ export default function PosCaseStudy() {
             <FiArrowLeft size={14} /> Back to work
           </a>
           <a href="#/bookings" className="inline-flex items-center gap-1.5 text-muted hover:text-fg">
-            Next: Ryan’s Bookings <FiArrowRight size={14} />
+            Next: Booking System <FiArrowRight size={14} />
           </a>
         </div>
       </section>

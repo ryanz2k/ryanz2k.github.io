@@ -54,7 +54,7 @@ export default function BookingsCaseStudy() {
   useEffect(restoreScroll, [])
   useEffect(() => {
     const prev = document.title
-    document.title = 'Ryan’s Bookings — case study · John Ryan Gomez'
+    document.title = 'Booking System — case study · John Ryan Gomez'
     return () => {
       document.title = prev
     }
@@ -137,7 +137,7 @@ export default function BookingsCaseStudy() {
             customers who never show up, and two customers promised the same chair.
           </p>
           <p>
-            Ryan’s Bookings takes a deposit before the time is confirmed, and makes the double booking
+            The Booking System takes a deposit before the time is confirmed, and makes the double booking
             impossible instead of unlikely. It is built to be rebranded for a shop in minutes: name, colour and
             logo are settings.
           </p>

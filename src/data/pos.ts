@@ -7,7 +7,7 @@ export function posShot(name: string): string | undefined {
 }
 
 export const POS = {
-  name: 'Ryan’s POS',
+  name: 'POS System',
   tagline: 'Offline-first point of sale for Philippine cafés, salons and retail.',
   pitch:
     'Keeps selling when the internet drops, and syncs safely when it comes back. Built for the details local shops actually deal with: VAT breakdowns, Senior and PWD discounts, X and Z readings, GCash and Maya.',

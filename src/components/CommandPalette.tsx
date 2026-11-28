@@ -56,8 +56,8 @@ export default function CommandPalette({
   const commands = useMemo<Command[]>(
     () => [
       { id: 'top', group: 'Go to', label: 'Home', icon: <FiHome />, run: () => goToSection('top') },
-      { id: 'pos', group: 'Go to', label: 'Ryan’s POS case study', hint: 'Offline-first point of sale', icon: <FiShoppingBag />, run: () => void (window.location.hash = '#/pos') },
-      { id: 'bookings', group: 'Go to', label: 'Ryan’s Bookings case study', hint: 'Booking with deposits', icon: <FiCalendar />, run: () => void (window.location.hash = '#/bookings') },
+      { id: 'pos', group: 'Go to', label: 'POS System case study', hint: 'Offline-first point of sale', icon: <FiShoppingBag />, run: () => void (window.location.hash = '#/pos') },
+      { id: 'bookings', group: 'Go to', label: 'Booking System case study', hint: 'Booking with deposits', icon: <FiCalendar />, run: () => void (window.location.hash = '#/bookings') },
       { id: 'campus', group: 'Go to', label: 'CampusShare case study', hint: 'Android marketplace', icon: <FiSmartphone />, run: () => void (window.location.hash = '#/campusshare') },
       { id: 'services', group: 'Go to', label: 'Services for businesses', icon: <FiTool />, run: () => goToSection('services') },
       { id: 'experience', group: 'Go to', label: 'Experience', icon: <FiBriefcase />, run: () => goToSection('experience') },
